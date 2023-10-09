@@ -41,6 +41,7 @@
 {% endif %}
 
 {% for c in cats %}
+{% if c.women__count > 0 %}
     {% if c.pk == cat_selected %}
         <li class="selected">{{ c.name }}</li>
     {% else %}
@@ -48,6 +49,7 @@
             <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
         </li>
     {% endif %}
+{% endif %}
 {% endfor %}
 
 		<li class="share">
